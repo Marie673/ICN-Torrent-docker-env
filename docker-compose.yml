@@ -8,8 +8,8 @@ services:
     working_dir: "/~"
     tty: true
     volumes:
-      - ../Torrent_Proxy/:~/torrent_proxy
-      - ../evaluation/:/evaluation/
+      - ./Torrent_Proxy/:/~/torrent_proxy
+      - ./evaluation/:/~/evaluation/
     networks:
       ip_net:
         ipv4_address: 10.0.1.102 # 10.0.1.102
@@ -24,8 +24,8 @@ services:
     working_dir: "/~"
     tty: true
     volumes:
-      - ../ccn_torrent_client/:~/ccn_torrent_client
-      - ../evaluation/:/evaluation/
+      - ./ccn_torrent_client/:/~/ccn_torrent_client
+      - ./evaluation/:/~/evaluation/
     networks:
       ccn_net:
         ipv4_address: 10.0.2.202 # 10.0.1.102
@@ -41,7 +41,7 @@ services:
     working_dir: "/producer"
     tty: true
     volumes:
-      - ../evaluation/:/producer/evaluation
+      - ./evaluation/:/~/evaluation
     ports:
       - "0.0.0.0:5901:5901"
     networks:
