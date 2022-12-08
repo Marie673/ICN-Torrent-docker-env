@@ -1,24 +1,15 @@
 version: '3.5'
 services:
-
-  proxy:
+  bittorrent:
     extra_hosts:
       - "archive.ubuntu.com:185.125.190.36"
-    # image: cefore/base
-    build: ./proxy
-    container_name: "proxy"
-    working_dir: "/proxy"
+    image: cefore/base
+    container_name: "bittorrent"
+    working_dir: "/~"
     tty: true
-    cap_add:
-      - NET_ADMIN
     volumes:
-<<<<<<< HEAD:docker-compose.yml
-      - ./Torrent_Proxy/:/proxy/torrent_proxy
-      - ./evaluation/:/proxy/evaluation/
-=======
       - ./Torrent_Proxy/:/~/torrent_proxy
       - ./evaluation/:/evaluation/
->>>>>>> 7c1731c... first commit:experiment/docker-compose.yml
     networks:
       ip_net:
         ipv4_address: 10.0.1.102 # 10.0.1.102
@@ -28,21 +19,13 @@ services:
   client:
     extra_hosts:
       - "archive.ubuntu.com:185.125.190.36"
-    # image: cefore/base
-    build: ./client
+    image: cefore/base
     container_name: "client"
-    working_dir: "/client"
+    working_dir: "/~"
     tty: true
-    cap_add:
-      - NET_ADMIN
     volumes:
-<<<<<<< HEAD:docker-compose.yml
-      - ./ccn_torrent_client/:/client/ccn_torrent_client
-      - ./evaluation/:/client/evaluation/
-=======
       - ./ccn_torrent_client/:/~/ccn_torrent_client
       - ./evaluation/:/evaluation/
->>>>>>> 7c1731c... first commit:experiment/docker-compose.yml
     networks:
       ccn_net:
         ipv4_address: 10.0.2.202 # 10.0.1.102
@@ -50,29 +33,15 @@ services:
   producer1:
     extra_hosts:
       - "archive.ubuntu.com:185.125.190.36"
-<<<<<<< HEAD:docker-compose.yml
-    # image: queeno/ubuntu-desktop
-    build: ./producer
-    container_name: "proxy"
-    hostname: "proxy"
-    working_dir: "proxy"
-=======
     # image: ubuntu-vnc-desktop[
     image: queeno/ubuntu-desktop
     # build: ./docker-ubuntu-desktop
     container_name: "producer1"
     hostname: "producer1"
     working_dir: "/producer"
->>>>>>> 7c1731c... first commit:experiment/docker-compose.yml
     tty: true
-    cap_add:
-      - NET_ADMIN
     volumes:
-<<<<<<< HEAD:docker-compose.yml
-      - ./evaluation/:/proxy/evaluation
-=======
       - ./evaluation/:/producer/evaluation
->>>>>>> 7c1731c... first commit:experiment/docker-compose.yml
     ports:
       - "0.0.0.0:5902:5901"
     networks:
