@@ -5,11 +5,11 @@ services:
       - "archive.ubuntu.com:185.125.190.36"
     image: cefore/base
     container_name: "bittorrent"
-    working_dir: "/~"
+    working_dir: "/bittorrent"
     tty: true
     volumes:
-      - ./Torrent_Proxy/:/~/torrent_proxy
-      - ./evaluation/:/~/evaluation/
+      - ./Torrent_Proxy/:/bittorrent/torrent_proxy
+      - ./evaluation/:/bittorrent/evaluation/
     networks:
       ip_net:
         ipv4_address: 10.0.1.102 # 10.0.1.102
@@ -21,11 +21,11 @@ services:
       - "archive.ubuntu.com:185.125.190.36"
     image: cefore/base
     container_name: "client"
-    working_dir: "/~"
+    working_dir: "/client"
     tty: true
     volumes:
-      - ./ccn_torrent_client/:/~/ccn_torrent_client
-      - ./evaluation/:/~/evaluation/
+      - ./ccn_torrent_client/:/client/ccn_torrent_client
+      - ./evaluation/:/client/evaluation/
     networks:
       ccn_net:
         ipv4_address: 10.0.2.202 # 10.0.1.102
@@ -38,10 +38,10 @@ services:
     # build: ./docker-ubuntu-desktop
     container_name: "producer"
     hostname: "producer"
-    working_dir: "/~"
+    working_dir: "/producer"
     tty: true
     volumes:
-      - ./evaluation/:/~/evaluation
+      - ./evaluation/:/producer/evaluation
     ports:
       - "0.0.0.0:5901:5901"
     networks:
