@@ -8,7 +8,7 @@ services:
     working_dir: "/bittorrent"
     tty: true
     volumes:
-      - ./Torrent_Proxy/:/bittorrent/torrent_proxy
+      # - ./Torrent_Proxy/:/bittorrent/torrent_proxy
       - ./evaluation/:/bittorrent/evaluation/
     networks:
       ip_net:
@@ -24,7 +24,7 @@ services:
     working_dir: "/client"
     tty: true
     volumes:
-      - ./ccn_torrent_client/:/client/ccn_torrent_client
+      # - ./ccn_torrent_client/:/client/ccn_torrent_client
       - ./evaluation/:/client/evaluation/
     networks:
       ccn_net:
