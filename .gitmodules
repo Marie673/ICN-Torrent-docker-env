@@ -1,0 +1,8 @@
+[submodule "Torrent_Proxy"]
+	path = Torrent_Proxy
+	url = https://github.com/Marie673/Torrent_Proxy
+	branch = master
+[submodule "ccn_torrent_client"]
+	path = ccn_torrent_client
+	url = https://github.com/Marie673/ccn_torrent_client
+	branch = master
