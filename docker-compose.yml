@@ -37,7 +37,7 @@ services:
       ccn_net:
         ipv4_address: 10.0.2.202 # 10.0.1.102
 
-  producer:
+  producer1:
     extra_hosts:
       - "archive.ubuntu.com:185.125.190.36"
     # image: queeno/ubuntu-desktop
@@ -51,10 +51,10 @@ services:
     volumes:
       - ./evaluation/:/proxy/evaluation
     ports:
-      - "0.0.0.0:5901:5901"
+      - "0.0.0.0:5902:5901"
     networks:
       ip_net:
-        ipv4_address: 10.0.1.202
+        ipv4_address: 10.0.1.203
 
 
 networks:
