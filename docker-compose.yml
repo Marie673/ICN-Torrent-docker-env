@@ -31,7 +31,7 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./ccn_torrent_client/:/client/ccn_torrent_client
+      - ./ccn_torrent_client/:/client/ccn_torrent
       - ./evaluation/:/client/evaluation/
     networks:
       ccn_net:
