@@ -44,7 +44,7 @@ services:
     build: ./producer
     container_name: "producer"
     hostname: "producer"
-    working_dir: "producer"
+    working_dir: "/producer"
     tty: true
     cap_add:
       - NET_ADMIN
